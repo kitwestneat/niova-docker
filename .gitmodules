@@ -1,0 +1,6 @@
+[submodule "spdk"]
+	path = spdk
+	url = git@github.com:kitwestneat/spdk.git
+[submodule "niova-block"]
+	path = niova-block
+	url = git@github.com:00pauln00/niova-block.git
