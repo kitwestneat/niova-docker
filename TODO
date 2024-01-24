@@ -1,0 +1,4 @@
+- change build process to be run outside docker image, just copy build artifacts to said image
+- test running
+- set up an ECR image and test ECS
+    https://docs.aws.amazon.com/AmazonECS/latest/userguide/create-container-image.html
