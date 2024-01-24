@@ -1,6 +1,12 @@
-FROM alpine:3.19
+FROM debian:12.4-slim
+RUN apt-get update
+RUN apt-get install make autoconf automake gcc pkgconf libtool uuid-dev zlib1g-dev liblz4-dev librocksdb-dev
+RUN apt-get install liburing-dev libreadline-dev libfuse3-dev python3-minimal procps meson python3-pip
+RUN apt-get install python3-pyelftools libnuma-dev libssl-dev libcunit1-dev libaio-dev
+
 WORKDIR /niova
 COPY . .
-RUN build.sh
-CMD run_client_server.sh
+
+RUN ./build.sh
+#CMD run_client_server.sh
 EXPOSE 4420

@@ -1,9 +1,7 @@
 #!/bin/bash
-#
-git submodule update --init --recursive
+
 
 pushd niova-block
-git submodule update --init --recursive
 
     pushd niova-core
     ./prepare.sh
