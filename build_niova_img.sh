@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 docker build build/docker/ -t niova-build
 docker run -v $PWD/src/root/:/niova/root:Z  -v $PWD/build/:/niova/build:Z -it -e CLEAN=$CLEAN niova-build

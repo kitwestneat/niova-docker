@@ -1,0 +1,10 @@
+# download niova-block and spdk
+git submodule update --init --recursive
+
+# build niova and create niova image
+bash build_niova_img.sh
+
+# run niova and nvmeof server
+bash run.sh
+
+
