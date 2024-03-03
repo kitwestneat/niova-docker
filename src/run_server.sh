@@ -14,6 +14,7 @@ init_device() {
     niova-block-ctl -d $NISD_IMG -i -u $TGT_UUID
 }
 
+find /store
 [ -f $NISD_IMG ] || init_device 
 
 /usr/bin/nisd -d $NISD_IMG -u $TGT_UUID
