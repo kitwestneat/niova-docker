@@ -1,3 +1,7 @@
+# setup nvme hostid
+dmidecode -s system-uuid > /etc/nvme/hostid
+nvme gen-hostnqn
+
 # download niova-block and spdk
 git submodule update --init --recursive
 
