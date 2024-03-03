@@ -1,3 +1,11 @@
+# install packages
+apt install docker.io nvme-cli uuid linux-modules-extra-$(uname -r) # Ubuntu
+dnf install git docker nvme-cli uuid # Fedora
+
+# ensure docker and nvme setup
+systemctl enable --now docker
+modprobe nvme-tcp
+
 # setup nvme hostid
 dmidecode -s system-uuid > /etc/nvme/hostid
 nvme gen-hostnqn
@@ -11,4 +19,6 @@ bash build_niova_img.sh
 # run niova and nvmeof server
 bash run.sh
 
+# connect to nvme (separate window)
+nvme connect-all -t tcp -a localhost -s 4420
 
